@@ -72,16 +72,16 @@ int main() {
     printf("\n\nDigite os dados da carta 2 abaixo:\n");
 
     printf("Digite a inicial do estado:");
-    scanf("%s", &estado2);
+    scanf(" %c", &estado2);
 
     printf("Digite o Código da carta (ex: A = inicial do estado 'A01, A02...'): ");
-    scanf("%s", &codigoDaCarta2);
+    scanf("%s", codigoDaCarta2);
 
     printf("Digite o nome da cidade:");
     scanf("%s", nomeDaCidade2);
 
     printf("Digite o número da população da cidade:");
-    scanf("%lu", &populacao2);
+    scanf("%d", &populacao2);
 
     printf("Digite o tamanho da área em Km² da cidade:");
     scanf("%f", &areaKm2);
@@ -151,18 +151,17 @@ pibPerCapital2 = (float) pib2 / populacao2;
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
     printf("\nComparação de cartas (Atributo: População):\n\n");
-    printf("Carta 1 - %c (%c): %d\n",nomeDaCidade1,estado1,populacao1);
-    printf("Carta 2 - %c (%c): %d\n",nomeDaCidade2,estado2,populacao2);
+printf("Carta 1 - %s (%c): %d\n", nomeDaCidade1, estado1, populacao1);
+printf("Carta 2 - %s (%c): %d\n", nomeDaCidade2, estado2, populacao2);
 
 
-    if(populacao1 > populacao2)
-    {
-        printf("\nResultado: Carta 1 venceu!\n",nomeDaCidade1);
+
+    if(populacao1 > populacao2) { 
+        printf("\nResultado: Carta 1 (%s) venceu!\n", nomeDaCidade1); 
+    } else { 
+        printf("\nResultado: Carta 2 (%s) venceu!\n", nomeDaCidade2); 
     }
-    else
-    {
-        printf("\nResultado: Carta 2 venceu!\n",nomeDaCidade2);
-    }
+    
 
     
 
