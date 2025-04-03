@@ -7,9 +7,6 @@
 
 int main() {
     // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
-
-    
     
 
         // Dados da carta 1
@@ -22,6 +19,9 @@ int main() {
     float pib1; // PIB da cidade em milhões de reais.
     int qtdPontosTuristicos1; // Quantidade de pontos turísticos na cidade.
 
+    float densidadePopulacional1; //Aqui sera Divida a população da cidade pela sua área.
+    float pibPerCapital1;//Aqui sera Divida o PIB da cidade pela sua população.
+
 
         // Dados da carta 2
     
@@ -29,21 +29,23 @@ int main() {
     char codigoDaCarta2[10];
     char nomeDaCidade2[30];
     int populacao2;
-    float areaKm2; // Área da cidade em km².
+    float areaKm2; 
     float pib2;
     int qtdPontosTuristicos2;     
+
+    float densidadePopulacional2; 
+    float pibPerCapital2;
 
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
     // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
     // Exemplo:
     // printf("Digite o código da cidade: ");
     // scanf("%s", codigo);
     // 
     // (Repita para cada propriedade)
 
-    printf("Digite os dados da carta 1 abaixo:\n");
+    printf("\n\nDigite os dados da carta 1 abaixo:\n");
 
     printf("Digite a inicial do estado:");
     scanf("%c", &estado1);
@@ -68,7 +70,7 @@ int main() {
    
     // A leitura dos dados da carta 2
 
-    printf("Digite os dados da carta 2 abaixo:\n");
+    printf("\n\nDigite os dados da carta 2 abaixo:\n");
 
     printf("Digite a inicial do estado:");
     scanf("%s", &estado2);
@@ -90,10 +92,44 @@ int main() {
 
     printf("Digite a quantidade de pontos turísticos da cidade:");
     scanf("%d", &qtdPontosTuristicos2);
+
+            //calculo da densidade e pib percapta
     
+//carta 1
+densidadePopulacional1 = (float) populacao1 / areaKm1 ;
+pibPerCapital1 = (float) pib1 / populacao1;
 
 
+//carta 2
+densidadePopulacional2 = (float) populacao2 / areaKm2 ;
+pibPerCapital2 = (float) pib2 / populacao2;
 
+            //exibição das cartas
+
+    printf("\n\nLogo abaixo terá as descrições das cartas: \n\n");
+
+    printf("Carta 1: \n");
+    printf("Estado: %c\n", estado1);
+    printf("Código: %s\n", codigoDaCarta1);
+    printf("Nome da Cidade: %s\n", nomeDaCidade1);
+    printf("População: %d\n", populacao1);
+    printf("Área: %.2f km²\n", areaKm1);
+    printf("PIB: %.2f bilhões de reais\n", pib1);
+    printf("Número de Pontos Turísticos: %d\n", qtdPontosTuristicos1);
+    printf("Densidade Populacional: %.2f\n",densidadePopulacional1);
+    printf("PIB per Capital: %.2f\n", pibPerCapital1);
+
+
+    printf("\n\nCarta 2: \n");
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigoDaCarta2);
+    printf("Nome da Cidade: %s\n", nomeDaCidade2);
+    printf("População: %d\n", populacao2);
+    printf("Área: %.2f km²\n", areaKm2);
+    printf("PIB: %.2f bilhões de reais\n", pib2);
+    printf("Número de Pontos Turísticos: %d\n", qtdPontosTuristicos2);
+    printf("Densidade Populacional: %.2f\n",densidadePopulacional2);
+    printf("PIB per Capital: %.2f\n\n\n", pibPerCapital2);    
 
     
 
@@ -114,6 +150,22 @@ int main() {
 
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+
+    printf("\nComparação de cartas (Atributo: População):\n\n");
+    printf("Carta 1 - %c (%c): %d\n",nomeDaCidade1,estado1,populacao1);
+    printf("Carta 2 - %c (%c): %d\n",nomeDaCidade2,estado2,populacao2);
+
+
+    if(populacao1 > populacao2)
+    {
+        printf("\nResultado: Carta 1 (%c) venceu!\n",nomeDaCidade1);
+    }
+    else
+    {
+        printf("\nResultado: Carta 2 (%c) venceu!\n",nomeDaCidade2);
+    }
+
+    
 
     return 0;
 }
