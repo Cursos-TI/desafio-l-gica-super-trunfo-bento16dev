@@ -50,7 +50,7 @@ int main() {
     scanf("%c", &estado1);
 
     printf("Digite o Código da carta (ex: A = inicial do estado 'A01, A02...'):");
-    scanf("%s", &codigoDaCarta1);
+    scanf("%s", codigoDaCarta1);
 
     printf("Digite o nome da cidade:");
     scanf("%s", nomeDaCidade1);
